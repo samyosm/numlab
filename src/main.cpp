@@ -1,16 +1,34 @@
 #include "integration/integration.hpp"
+#include <cstddef>
+#include <cstdlib>
 #include <iostream>
 
-double f(double x) { return x; }
+double f(double x) {
+  x += x;
+  return x;
+}
+
+void f(int *x) { *x += *x; }
+
+int *wst(std::size_t size) {
+  int *ptr = (int *)malloc(size * sizeof(int));
+
+  return ptr;
+}
 
 int main() {
 
-  double a = 0;
-  double b = 100;
+  int *ptr = wst(4);
+  *ptr = 2;
 
-  double area = numlab::riemann_integration(f, a, b);
+  f(ptr);
 
-  std::cout << "Area: " << area << "\n";
+  std::cout << "Ptr: " << ptr << "\n";
+  std::cout << "Value: " << *ptr << "\n";
+
+  free(ptr);
+  std::cout << "Ptr: " << ptr << "\n";
+  std::cout << "Value: " << *ptr << "\n";
 
   return 0;
 }
