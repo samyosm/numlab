@@ -16,6 +16,7 @@ include_directories(include src)
 add_library(numlab
     src/root_solver/root_solver.hpp
     src/root_solver/regula_falsi.cpp
+    src/root_solver/fixed_point.cpp
     src/root_solver/bisection.cpp 
     src/integration/integration.hpp
     src/integration/riemann.cpp
