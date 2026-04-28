@@ -16,20 +16,20 @@ void print_error(double root) {
 
 int main() {
 
-  double a = 0;
-  double b = 2;
-
-  auto root_bisection = numlab::bisection(f, a, b);
-  auto root_regula_falsi = numlab::regula_falsi(f, a, b);
-  auto root_fixed_point =
-      numlab::fixed_point([](double x) { return -1 / (x * x + 2); },
-                          (a + b) / 2); // Converges (f doesn't)
-
-  std::cout << "Bisection: " << root_bisection << " || ";
-  print_error(root_bisection);
-  std::cout << "Regula Falsi: " << root_regula_falsi << " || ";
-  print_error(root_regula_falsi);
-  std::cout << "Fixed Point: " << root_fixed_point << "\n";
+  // double a = 0;
+  // double b = 2;
+  //
+  // auto root_bisection = numlab::bisection(f, a, b);
+  // auto root_regula_falsi = numlab::regula_falsi(f, a, b);
+  // auto root_fixed_point =
+  //     numlab::fixed_point([](double x) { return -1 / (x * x + 2); },
+  //                         (a + b) / 2); // Converges (f doesn't)
+  //
+  // std::cout << "Bisection: " << root_bisection << " || ";
+  // print_error(root_bisection);
+  // std::cout << "Regula Falsi: " << root_regula_falsi << " || ";
+  // print_error(root_regula_falsi);
+  // std::cout << "Fixed Point: " << root_fixed_point << "\n";
 
   return 0;
 }
